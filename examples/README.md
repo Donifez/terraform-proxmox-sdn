@@ -2,6 +2,8 @@
 
 Each directory under `examples/` demonstrates a specific use case for the `terraform-proxmox-sdn` module.
 
+Each example directory also includes its own `README.md` so the Terraform Registry can render the example page with the correct purpose and usage notes.
+
 ## Available examples
 
 | Example | Description |
