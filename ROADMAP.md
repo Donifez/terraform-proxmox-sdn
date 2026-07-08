@@ -17,7 +17,7 @@ Current line focuses on single-node Proxmox SDN with host-side orchestration.
   - `uplink_interface`
 - Examples:
   - `basic` (single VNet with DHCP)
-  - `homelab-six-vlans` (mgmt/obs/dev/staging/prod/lab)
+  - `homelab-six-vlans` (mgmt/obs/dev/staging/prod/validation)
   - `no-dhcp` (L3 + NAT, no DHCP)
   - `multi-node` (single-node “cluster zone” plus scaffold)
 - SDN auto-healing helper (optional) and systemd units.
@@ -35,7 +35,7 @@ Current line focuses on single-node Proxmox SDN with host-side orchestration.
   - Ensure all examples pass `terraform init -backend=false` and `terraform validate` against released versions
   - Align comments and outputs for copy/paste consistency
 - Additional reference patterns:
-  - Small production-style layout (refined from `homelab-six-vlans`)
+  - Small production-style layout (refined from the six-VLAN example)
   - Minimal “L3 + NAT, no DHCP” pattern for sites with external DHCP
 
 ## 0.2.0
@@ -55,7 +55,7 @@ Cluster-aware multi-node SDN.
 
 Multi-zone and integration.
 
-- Multiple SDN zones per deployment (e.g., `core`, `tenant`, `lab`).
+- Multiple SDN zones per deployment (for example `core`, `tenant`, `validation`).
 - NetBox integration example using module outputs (IPAM export + inventory linkage).
 - Terraform Cloud / Terraform Enterprise compatibility testing and docs.
 - Advanced DHCP capabilities where safe to automate (reservations, additional options).

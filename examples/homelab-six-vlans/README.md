@@ -1,6 +1,6 @@
-# Homelab Six VLANs Example
+# Six VLAN Reference Example
 
-Six-network Proxmox SDN example for a production-style homelab or small platform environment.
+Six-network Proxmox SDN example for a production-style segmented environment.
 
 ## What it creates
 
@@ -11,7 +11,7 @@ Six-network Proxmox SDN example for a production-style homelab or small platform
   - `vnetdev` on VLAN `20` for development.
   - `vnetstag` on VLAN `30` for staging.
   - `vnetprod` on VLAN `40` for production.
-  - `vnetlab` on VLAN `50` for lab and testing.
+  - `vnetlab` on VLAN `50` for validation and testing.
 - A `/24` subnet per VNet with the `.1` address as the gateway.
 - DHCP ranges from `.120` through `.220` in each subnet.
 - SNAT through uplink interface `vmbr0`.

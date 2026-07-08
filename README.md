@@ -5,7 +5,7 @@
 
 Terraform module for managing **Proxmox SDN** (Software-Defined Networking) with optional **host L3**, **SNAT**, and **per-subnet DHCP via dnsmasq**.
 
-Use it when you want Proxmox networking to be **rebuildable and source-controlled** rather than manually recreated after every lab reset, host replacement, or environment rollout.
+Use it when you want Proxmox networking to be **rebuildable and source-controlled** rather than manually recreated after every environment reset, host replacement, or rollout.
 
 It creates a VLAN-backed SDN zone, VNets, and subnets on **Proxmox VE 8.x** and can:
 
@@ -16,7 +16,7 @@ It creates a VLAN-backed SDN zone, VNets, and subnets on **Proxmox VE 8.x** and 
 
 The two practical operating modes are:
 
-- **Host-routed**: Proxmox owns the gateway IPs, NAT, and optional DHCP. Good for serious labs, bootstrap, and smaller sites.
+- **Host-routed**: Proxmox owns the gateway IPs, NAT, and optional DHCP. Good for bootstrap, evaluation, and smaller sites.
 - **Edge-routed**: Proxmox SDN provides segmentation, while a real edge appliance such as VyOS owns routing and DHCP.
 
 > **Module Source**
@@ -31,9 +31,9 @@ The two practical operating modes are:
 >
 > If the module is useful, a GitHub star is appreciated.
 
-Designed for **production-style Proxmox platforms** and advanced labs, and usable:
+Designed for **production-style Proxmox platforms** and controlled evaluation environments, and usable:
 
-- As **standalone Terraform** in a focused project, advanced lab, or production stack.
+- As **standalone Terraform** in a focused project, validation environment, or production stack.
 - As part of a **Terragrunt / monorepo stack** (for example, within a HybridOps `live-v1` layout).
 
 ---
@@ -150,7 +150,7 @@ hybridops-platform/infra/terraform/live-v1/onprem/proxmox/core/00-foundation/net
 
 Typical reference layout (six VLANs):
 
-- Environments: `mgmt`, `obs`, `dev`, `staging`, `prod`, `lab`.
+- Environments: `mgmt`, `obs`, `dev`, `staging`, `prod`, `validation`.
 - For `/24` subnets:
   - `.1` – gateway (VNet bridge).
   - `.2–.9` – infrastructure services.
@@ -344,7 +344,7 @@ The module supports two valid operating patterns:
 
 Use this for:
 - bootstrap foundations
-- academy/lab environments
+- academy and training environments
 - single-node or small-site deployments where Proxmox can safely provide L3/NAT/DHCP
 
 Typical settings:
@@ -422,7 +422,7 @@ What it does **not** intentionally remove:
 - unrelated SDN zones not in this Terraform state
 
 Destroy is still disruptive for the zone it manages, so reserve it for:
-- lab teardown
+- controlled teardown
 - controlled rebuilds
 - deliberate decommission of a module-owned SDN segment
 

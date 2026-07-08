@@ -98,7 +98,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     defaults) when DHCP is enabled.
 - Examples updated to use the new flags and semantics:
   - `basic` – minimal VNet with implicit DHCP (ranges only).
-  - `homelab-six-vlans` – six-VLAN reference layout (mgmt/obs/dev/staging/prod/lab)
+  - `homelab-six-vlans` – six-VLAN reference layout (mgmt/obs/dev/staging/prod/validation)
     with L3, SNAT, and per-VNet DHCP.
   - `no-dhcp` – static-only network with L3 + SNAT enabled and no DHCP.
   - `multi-node` – single-node “cluster zone” layout plus a commented scaffold
@@ -135,7 +135,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   with the running configuration and clear stale warnings in the UI.
 - Updated examples:
   - `basic` – single VNet with DHCP and standard `.120–.220` pool.
-  - `homelab-six-vlans` – six-VLAN reference layout (mgmt/obs/dev/staging/prod/lab).
+  - `homelab-six-vlans` – six-VLAN reference layout (mgmt/obs/dev/staging/prod/validation).
   - `no-dhcp` – static-only network with DHCP disabled.
   - `multi-node` – single-node implementation plus commented scaffold for
     future multi-node support.
