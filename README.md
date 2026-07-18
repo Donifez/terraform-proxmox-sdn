@@ -157,8 +157,9 @@ module "sdn" {
 }
 ```
 
-In this mode `proxmox_host` is not required.
-
+In this mode `proxmox_host` is not required. Existing host-managed deployments
+should be cleaned up before host access is removed; this mode is intended for
+fresh edge-routed use.
 
 ### GitHub source (monorepos / explicit tag pinning)
 
